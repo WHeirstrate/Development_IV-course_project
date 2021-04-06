@@ -8,5 +8,6 @@ public class ExampleTest {
     public void getSum() {
         Example ex = new Example(4, 65);
         assertEquals(ex.getSum(), 69);
+        System.out.println("Hello World");
     }
 }
