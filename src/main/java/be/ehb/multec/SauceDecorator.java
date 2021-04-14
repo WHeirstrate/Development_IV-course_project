@@ -1,13 +1,21 @@
 package be.ehb.multec;
 
 
-public abstract class SauceDecorator extends Fries{
+import be.ehb.multec.Fries;
 
-protected Fries fries;
+public abstract class SauceDecorator extends Fries {
 
-protected SauceDecorator(Fries fries) { this.fries = fries; }
+    protected Fries fries;
 
-protected double cost() { return fries.cost(); }
+    protected SauceDecorator(Fries fries) {
+        this.fries = fries;
+    }
 
-protected double time() { return fries.time(); }
+    protected double cost() {
+        return fries.cost();
+    }
+
+    protected double time() {
+        return fries.time();
+    }
 }
