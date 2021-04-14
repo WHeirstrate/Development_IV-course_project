@@ -19,18 +19,18 @@ public class OrderTest {
     Fries order2 = new Mayo(new Medium());
     Fries order3 = new Ketchup(new Small());
 
-    @Test
+ @Test
     public void getCost() {
         orderList.add(null);
         orderList.add(order2);
-
+        
         Order order = new Order(orderList);
         assertEquals(4.0, order.getCost());
     }
 
     @Test
     public void getDescription(){
-        orderList.add(null);
+        orderList.add(order1);
         orderList.add(order3);
         Order order = new Order(orderList);
         System.out.println(order.getDescription());
