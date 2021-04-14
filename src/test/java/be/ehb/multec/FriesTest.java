@@ -1,5 +1,8 @@
 package be.ehb.multec;
 
+import be.ehb.multec.sauce.Mayo;
+import be.ehb.multec.size.Small;
+
 public class FriesTest {
 
     public static void main(String[] args) {
