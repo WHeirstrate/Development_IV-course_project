@@ -1,9 +1,12 @@
-package be.ehb.multec;
+package be.ehb.multec.sauce;
+
+import be.ehb.multec.Fries;
+import be.ehb.multec.SauceDecorator;
 
 public class Special extends SauceDecorator {
     public Special(Fries fries) {
         super(fries);
-        super.setDescription(", special");
+        super.setDescription(" with special sauce");
     }
 
     @Override
@@ -12,7 +15,9 @@ public class Special extends SauceDecorator {
     }
 
     @Override
-    protected double time() { return super.time() + 2; }
+    protected double time() {
+        return super.time() + 2;
+    }
 
     @Override
     public String getDescription() {

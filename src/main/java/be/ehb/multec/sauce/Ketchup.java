@@ -1,9 +1,12 @@
-package be.ehb.multec;
+package be.ehb.multec.sauce;
+
+import be.ehb.multec.Fries;
+import be.ehb.multec.SauceDecorator;
 
 public class Ketchup extends SauceDecorator {
     public Ketchup(Fries fries) {
         super(fries);
-        super.setDescription(", ketchup");
+        super.setDescription(" with ketchup");
     }
 
     @Override

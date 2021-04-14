@@ -1,9 +1,12 @@
-package be.ehb.multec;
+package be.ehb.multec.sauce;
+
+import be.ehb.multec.Fries;
+import be.ehb.multec.SauceDecorator;
 
 public class Mayo extends SauceDecorator {
     public Mayo(Fries fries) {
         super(fries);
-        super.setDescription(", mayonaise");
+        super.setDescription(" with mayonaise");
     }
 
     @Override
