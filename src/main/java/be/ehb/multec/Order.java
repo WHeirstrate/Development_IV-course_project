@@ -2,25 +2,25 @@ package be.ehb.multec;
 
 import java.util.ArrayList;
 
-import static java.lang.System.err;
-
 public class Order {
     private double cost;
+    private double time;
     private String description = "Your order contains: ";
 
     Order(ArrayList<Fries> orderList) {
         int orderListLength = orderList.size();
         for (Fries order : orderList) {
-            calculateCostAndDescription(order);
+            calculateVariables(order);
             if (orderList.lastIndexOf(order) != orderListLength - 1)
                 this.description += ", ";
         }
     }
 
-    private void calculateCostAndDescription(Fries order){
+    private void calculateVariables(Fries order){
         if (order != null) {
-            this.cost += Math.round(order.cost());
-            this.description += order.getDescription();
+            cost += Math.round(order.cost());
+            time += Math.round(order.time());
+            description += order.getDescription();
         } else {
             System.out.println(" ** Your order should not contain a nullified object.");
             this.description += "null";
@@ -33,5 +33,19 @@ public class Order {
 
     public String getDescription() {
         return description;
+    }
+
+    public double getTime() {
+        return time;
+    }
+
+    @Override
+    public String toString() {
+        return description
+                + " and costs EUR"
+                + cost
+                + ". It will take "
+                + time
+                + " minutes to complete. Enjoy!";
     }
 }

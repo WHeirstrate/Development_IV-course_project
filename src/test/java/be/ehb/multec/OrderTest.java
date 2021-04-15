@@ -31,7 +31,30 @@ public class OrderTest {
     public void getDescription(){
         orderList.add(order1);
         orderList.add(order3);
+
         Order order = new Order(orderList);
         System.out.println(order.getDescription());
+    }
+
+    @Test
+    public void getTime(){
+        orderList.add(order1);
+        orderList.add(order2);
+        orderList.add(order3);
+        orderList.add(null);
+
+        Order order = new Order(orderList);
+        System.out.println(order.getTime());
+    }
+
+    @Test
+    public void getString() {
+        orderList.add(order1);
+        orderList.add(order2);
+        orderList.add(order3);
+        orderList.add(null);
+
+        Order order = new Order(orderList);
+        System.out.println(order);
     }
 }
