@@ -9,7 +9,6 @@ import be.ehb.multec.size.Small;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;
-
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
@@ -21,10 +20,10 @@ public class OrderTest {
 
  @Test
     public void getCost() {
-        orderList.add(null);
         orderList.add(order2);
         
         Order order = new Order(orderList);
+        System.out.println(order.getCost());
         assertEquals(4.0, order.getCost());
     }
 
