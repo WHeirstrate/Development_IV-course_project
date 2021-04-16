@@ -57,4 +57,14 @@ public class OrderTest {
         Order order = new Order(orderList);
         System.out.println(order);
     }
+
+    @Test
+    public void getCurrentState(){
+        orderList.add(order1);
+        orderList.add(order2);
+        orderList.add(order3);
+
+        Order order = new Order(orderList);
+        System.out.println(order);
+    }
 }

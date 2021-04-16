@@ -1,11 +1,17 @@
 package be.ehb.multec;
 
+import be.ehb.multec.state.CookingState;
+import be.ehb.multec.state.DoneState;
+import be.ehb.multec.state.State;
+import be.ehb.multec.state.WaitForCookingState;
+
 import java.util.ArrayList;
 
 public class Order {
     private double cost;
     private double time;
     private String description = "Your order contains: ";
+    private State currentState = new WaitForCookingState();
 
     Order(ArrayList<Fries> orderList) {
         int orderListLength = orderList.size();
@@ -14,9 +20,18 @@ public class Order {
             if (orderList.lastIndexOf(order) != orderListLength - 1)
                 this.description += ", ";
         }
+        System.out.println(currentState);
+        sentToFryer();
+        setCurrentState(new DoneState());
+        System.out.println(currentState);
     }
 
-    private void calculateVariables(Fries order){
+    private void sentToFryer() {
+        System.out.println("SENT TO FRYER");
+        Fryer.getInstance().fry(this);
+    }
+
+    private void calculateVariables(Fries order) {
         if (order != null) {
             cost += Math.round(order.cost());
             time += Math.round(order.time());
@@ -25,6 +40,10 @@ public class Order {
             System.out.println(" ** Your order should not contain a nullified object.");
             this.description += "null";
         }
+    }
+
+    void setCurrentState(State newState) {
+        this.currentState = newState;
     }
 
     public double getCost() {
@@ -37,6 +56,10 @@ public class Order {
 
     public double getTime() {
         return time;
+    }
+
+    public State getCurrentState() {
+        return currentState;
     }
 
     @Override
