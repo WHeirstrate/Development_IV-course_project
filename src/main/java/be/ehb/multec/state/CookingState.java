@@ -6,7 +6,6 @@ public class CookingState implements State {
     @Override
     public void doAction(Context context) {
         System.out.println("Order is cooking!");
-        //context.setState(this);
     }
 
     @Override
