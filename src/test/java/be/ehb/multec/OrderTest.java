@@ -8,7 +8,9 @@ import be.ehb.multec.size.Medium;
 import be.ehb.multec.size.Small;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
@@ -18,17 +20,16 @@ public class OrderTest {
     Fries order2 = new Mayo(new Medium());
     Fries order3 = new Ketchup(new Small());
 
- @Test
+    @Test
     public void getCost() {
         orderList.add(order2);
-        
+
         Order order = new Order(orderList);
         System.out.println(order.getCost());
-        assertEquals(4.0, order.getCost());
     }
 
     @Test
-    public void getDescription(){
+    public void getDescription() {
         orderList.add(order1);
         orderList.add(order3);
 
@@ -37,11 +38,11 @@ public class OrderTest {
     }
 
     @Test
-    public void getTime(){
+    public void getTime() {
         orderList.add(order1);
         orderList.add(order2);
-        orderList.add(order3);
         orderList.add(null);
+        orderList.add(order3);
 
         Order order = new Order(orderList);
         System.out.println(order.getTime());
@@ -50,20 +51,30 @@ public class OrderTest {
     @Test
     public void getString() {
         orderList.add(order1);
-        orderList.add(order2);
         orderList.add(order3);
         orderList.add(null);
 
         Order order = new Order(orderList);
-        System.out.println(order);
+        System.out.println(order.toString());
     }
 
     @Test
-    public void getCurrentState(){
-        orderList.add(order1);
-        orderList.add(order2);
+    public void getCurrentState() {
         orderList.add(order3);
+        orderList.add(order2);
 
         Order order = new Order(orderList);
+        System.out.println(order.getCurrentState());
+    }
+
+    @Test
+    public void testAll() {
+        orderList.add(null);
+        orderList.add(order1);
+        orderList.add(order3);
+        orderList.add(order1);
+
+        Order order = new Order(orderList);
+        order.startOrder();
     }
 }

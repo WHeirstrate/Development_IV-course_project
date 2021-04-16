@@ -6,7 +6,7 @@ import be.ehb.multec.SauceDecorator;
 public class Mayo extends SauceDecorator {
     public Mayo(Fries fries) {
         super(fries);
-        super.setDescription(" with mayonaise");
+        super.setDescription(" with mayonnaise");
     }
 
     @Override
