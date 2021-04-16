@@ -6,6 +6,7 @@ public class Fryer {
     private static final Fryer theOnlyFryerWeHave = new Fryer();
 
     public boolean fry(Order order){
+        System.out.println(order.printOrder());
         order.setCurrentState(new CookingState());
         System.out.println(order.getCurrentState());
         System.out.println("FRYER TIMEOUT");

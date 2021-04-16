@@ -10,6 +10,6 @@ public class DoneState implements State {
 
     @Override
     public String toString() {
-        return "Done";
+        return "Done, enjoy!";
     }
 }

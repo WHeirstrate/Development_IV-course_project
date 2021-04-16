@@ -9,6 +9,6 @@ public class WaitForCookingState implements State {
 
     @Override
     public String toString() {
-        return "Be patient. Your order is being processed.";
+        return "Your order is being processed...";
     }
 }

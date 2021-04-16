@@ -10,6 +10,6 @@ public class CookingState implements State {
 
     @Override
     public String toString() {
-        return "Cooking";
+        return "Cooking...";
     }
 }

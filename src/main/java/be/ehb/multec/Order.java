@@ -13,7 +13,7 @@ public class Order {
     private String description = "Your order contains: ";
     private State currentState = new WaitForCookingState();
 
-    Order(ArrayList<Fries> orderList) {
+    Order(ArrayList<Fries> orderList) { //SRP
         int orderListLength = orderList.size();
         for (Fries order : orderList) {
             calculateVariables(order);
@@ -42,8 +42,17 @@ public class Order {
         }
     }
 
-    void setCurrentState(State newState) {
+    protected void setCurrentState(State newState) {
         this.currentState = newState;
+    }
+
+    public String printOrder() {
+        return description
+                + " and costs EUR"
+                + cost
+                + ". It will take "
+                + time
+                + " minutes to complete.";
     }
 
     public double getCost() {
@@ -64,11 +73,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return description
-                + " and costs EUR"
-                + cost
-                + ". It will take "
-                + time
-                + " minutes to complete. Enjoy!";
+        return description;
     }
 }

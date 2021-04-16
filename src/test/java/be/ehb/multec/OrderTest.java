@@ -65,6 +65,5 @@ public class OrderTest {
         orderList.add(order3);
 
         Order order = new Order(orderList);
-        System.out.println(order);
     }
 }
