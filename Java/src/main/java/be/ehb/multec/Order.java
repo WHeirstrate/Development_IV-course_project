@@ -14,8 +14,9 @@ public class Order {
         int orderListLength = orderList.size();
         for (Fries order : orderList) {
             calculateVariables(order);
-            if (orderList.lastIndexOf(order) != orderListLength - 1)
+            if (orderListLength - 1 != 0)
                 this.description += ", ";
+            orderListLength--;
         }
     }
 
