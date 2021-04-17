@@ -1,17 +1,17 @@
 const sizeEnum = {
     small: {
         name: "small",
-        price: 2.10,
+        cost: 2.10,
         time: 3
     },
     medium: {
         name: "medium",
-        price: 3.10,
+        cost: 3.10,
         time: 3
     },
     family: {
         name: "family",
-        price: 5.10,
+        cost: 5.10,
         time: 3
     }
 };
@@ -19,17 +19,17 @@ const sizeEnum = {
 const sauceEnum = {
     mayo: {
         name: "mayonnaise",
-        price: 0.70,
+        cost: 0.70,
         time: 1
     },
     ketchup: {
         name: "ketchup",
-        price: 0.70,
+        cost: 0.70,
         time: 1
     },
     special: {
         name: "special sauce",
-        price: 1.50,
+        cost: 1.50,
         time: 2
     }
 };
@@ -40,17 +40,24 @@ const sauceEnum = {
  * retourneren.
  */
 
-function makeOrder(sauce, size) {
+function friesOrder(sauce, size) {
     let sauceName = sauce.name;
     let sizeName = size.name;
+    let totalCost = sauce.cost + size.cost;
     return {
         size: sizeName,
-        sauce: sauceName
+        sauce: sauceName,
+        cost: totalCost
     };
 }
 
+function order(fries) {
+    console.log(fries);
+}
+
 export {
-    makeOrder,
+    friesOrder,
     sizeEnum,
-    sauceEnum
+    sauceEnum,
+    order
 };

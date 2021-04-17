@@ -1,13 +1,13 @@
 import * as c from "./order.js";
 
-let order = [];
+let fries = [];
 
-let order1 = c.makeOrder(c.sauceEnum.special, c.sizeEnum.family);
-let order2 = c.makeOrder(c.sauceEnum.mayo, c.sizeEnum.medium);
-let order3 = c.makeOrder(c.sauceEnum.ketchup, c.sizeEnum.small);
+let order1 = c.friesOrder(c.sauceEnum.special, c.sizeEnum.family);
+let order2 = c.friesOrder(c.sauceEnum.mayo, c.sizeEnum.medium);
+let order3 = c.friesOrder(c.sauceEnum.ketchup, c.sizeEnum.small);
 
-order.push(order1);
-order.push(order2);
-order.push(order3);
+fries.push(order1);
+fries.push(order2);
+fries.push(order3);
 
-console.log(order);
+c.order(fries);
