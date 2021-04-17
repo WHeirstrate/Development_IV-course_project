@@ -29,11 +29,12 @@ function order(orderList) {
         if (order !== null) {
             cost += order.cost;
             time += order.time;
-            description += order.description;
-            //check if list has a next value, if not than skip the ", "
-            //
-            //if (orderList.lastIndexOf(order))
-            //    description += ", ";
+            if (order == orderList[orderList.length - 1]) {
+                description += order.description;
+            } else {
+                description += `${order.description}, `;
+            }
+
         } else {
             console.log(" ** Your order should not contain a nullified object.");
             description += "null";
