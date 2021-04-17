@@ -12,4 +12,6 @@ public abstract class Fries {
     public String getDescription() { return description; }
 
     public void setDescription(String description) { this.description = description; }
+
+    //testcomment
 }
