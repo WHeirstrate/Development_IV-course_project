@@ -1,3 +1,4 @@
+import * as e from "./enums.js";
 /**
  * Dit is een pure functie, aangezien dezelfde
  * parameters steeds hetzelfde object zullen
@@ -5,6 +6,11 @@
  */
 
 function friesOrder(sauce, size) {
+    let checkOrder = friesParamsCheck(sauce, size);
+    if (!checkOrder.state) {
+        console.error(checkOrder.message);
+        return null;
+    }
     let sauceName = sauce.name;
     let sizeName = size.name;
     let totalCost = sauce.cost + size.cost;
@@ -19,28 +25,49 @@ function friesOrder(sauce, size) {
     };
 }
 
+function friesParamsCheck(sauce, size) {
+    console.log("\n \n");
+    console.log("sauce: ", sauce);
+    console.log("SE: ", e.sauceEnum.special);
+    if (sauce.hasOwnProperty("name"))
+        sauce = e.sauceEnum.
+    if(false)
+    return {
+        state: false,
+        message: "The sauce must be an instance of the 'sauceEnum' object. (ex: e.sauceEnum.ketchup)"
+    };
+    if (false)
+        return {
+            state: false,
+            message: "The size must be an instance of the 'sizeEnum' object. (ex: e.sizeEmun.small)"
+        };
+    return {
+        state: true
+    };
+}
+
 function order(orderList) {
     let cost = 0;
     let time = 0;
     let description = "Your order contains: ";
-    let currentState = "new NotOrderedState()";
-
+    let message = "";
+    //let currentState = "new NotOrderedState()";
+    let orderListLength = orderList.length;
     for (let order of orderList) {
         if (order !== null) {
             cost += order.cost;
             time += order.time;
-            if (order == orderList[orderList.length - 1]) {
-                description += order.description;
-            } else {
-                description += `${order.description}, `;
-            }
-
+            description += order.description;
+            if (orderListLength - 1 !== 0)
+                description += ", ";
         } else {
             console.log(" ** Your order should not contain a nullified object.");
             description += "null";
         }
+        orderListLength--;
     }
-    console.log(description, cost, time);
+    message += `${description} and costs EUR${cost}. It will take ${time} seconds to complete.`;
+    console.log(message);
 }
 
 export {
