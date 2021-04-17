@@ -32,6 +32,9 @@ public class OrderTest {
     public void getDescription() {
         orderList.add(order1);
         orderList.add(order3);
+        orderList.add(order1);
+
+        // PROBLEM in description if 2 elements are the same
 
         Order order = new Order(orderList);
         System.out.println(order.getDescription());
