@@ -4,7 +4,7 @@ import be.ehb.multec.Fries;
 
 public class Family extends Fries {
     public Family() {
-        setDescription("Family fries");
+        setDescription("family fries");
     }
 
     @Override
