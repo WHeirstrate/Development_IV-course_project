@@ -3,7 +3,7 @@ import * as e from "./enums.js";
 
 let fries = [];
 
-let order1 = c.friesOrder(e.sauceEnum.special, e.sizeEnum.family);
+let order1 = c.friesOrder("special", e.sizeEnum.family);
 //let order2 = c.friesOrder(e.sauceEnum.mayo, e.sizeEnum.medium);
 //let order3 = c.friesOrder(e.sauceEnum.ketchup, e.sizeEnum.small);
 

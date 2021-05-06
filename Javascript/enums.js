@@ -33,7 +33,7 @@ const sauceEnum = {
         description: " with ketchup"
     },
     special: {
-        name: "special sauce",
+        name: "special",
         cost: 1.50,
         time: 2,
         description: " with special sauce"

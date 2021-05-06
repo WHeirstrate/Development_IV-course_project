@@ -7,6 +7,7 @@ import * as e from "./enums.js";
 
 function friesOrder(sauce, size) {
     let checkOrder = friesParamsCheck(sauce, size);
+    console.log(checkOrder);
     if (!checkOrder.state) {
         console.error(checkOrder.message);
         return null;
@@ -26,24 +27,20 @@ function friesOrder(sauce, size) {
 }
 
 function friesParamsCheck(sauce, size) {
-    console.log("\n \n");
-    console.log("sauce: ", sauce);
-    console.log("SE: ", e.sauceEnum.special);
-    if (sauce.hasOwnProperty("name"))
-        sauce = e.sauceEnum.
-    if(false)
-    return {
-        state: false,
-        message: "The sauce must be an instance of the 'sauceEnum' object. (ex: e.sauceEnum.ketchup)"
-    };
-    if (false)
+    try {
+        let sauceCheck = e.sauceEnum[sauce.name];
+        let sizeCheck = e.sizeEnum[size.name];
+        return {
+            state: true,
+            sauce: sauceCheck,
+            size: sizeCheck
+        };
+    } catch (err) {
         return {
             state: false,
-            message: "The size must be an instance of the 'sizeEnum' object. (ex: e.sizeEmun.small)"
+            message: "The sauce and size must be an instance of the 'sauceEnum' or 'sizeEnum' object. (ex: e.sauceEnum.ketchup)"
         };
-    return {
-        state: true
-    };
+    }
 }
 
 function order(orderList) {
