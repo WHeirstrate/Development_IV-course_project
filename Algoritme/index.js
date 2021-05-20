@@ -3,15 +3,21 @@ let array = [];
 document.getElementById('inputForm').addEventListener('submit', (event) => {
     event.preventDefault();
     let number = document.getElementById('numberInput');
-    array.push(number.value)
+    array.push(Number(number.value))
     document.getElementById('inputForm').reset();
     updateNumbers();
 });
 
 function updateNumbers() {
     let htmlEl = document.getElementById('displayNumbers');
-    htmlEl.innerText = array;
+    htmlEl.innerText = array.join(', ');
 }
+
+document.getElementById('sortAndFind').addEventListener('click', () => {
+    const missingNr = findMissing(array);
+    console.log(array);
+    document.getElementById('missingNr').innerText = missingNr;
+})
 
 //-----------------------------------------//
 /* Find first missing number in the array,
@@ -28,4 +34,3 @@ function findMissing(array) {
     return array;
 }
 //-----------------------------------------//
-//console.log(findMissing(array));
