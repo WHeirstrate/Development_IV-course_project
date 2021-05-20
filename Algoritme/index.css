@@ -5,6 +5,16 @@
     font-size: large;
 }
 
+input[type=submit],
+button {
+    padding: 5px 10px;
+    margin-top: 15px;
+}
+
+form {
+    margin-top: 15px;
+}
+
 .body {
     overflow: hidden;
 }
@@ -37,7 +47,10 @@
 .top {
     background-color: rgb(231, 231, 231);
     text-align: center;
+}
 
+#displayNumbers {
+    color: grey;
 }
 
 .middle {
@@ -48,9 +61,4 @@
 .bottom {
     background-color: rgb(231, 231, 231);
     text-align: center;
-}
-
-.bottom_button {
-    margin-top: 15px;
-    padding: 10px 20px;
 }
