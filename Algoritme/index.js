@@ -20,6 +20,9 @@ document.getElementById('sortAndFind').addEventListener('click', () => {
 })
 
 //-----------------------------------------//
+//---------------- ALGORITME --------------//
+//-----------------------------------------//
+
 /* Find first missing number in the array,
  * starting from the smallest number.
  */
