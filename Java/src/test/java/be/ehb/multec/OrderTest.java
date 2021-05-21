@@ -6,7 +6,6 @@ import be.ehb.multec.sauce.Special;
 import be.ehb.multec.size.Family;
 import be.ehb.multec.size.Medium;
 import be.ehb.multec.size.Small;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class OrderTest {
         orderList.add(order2);
 
         Order order = new Order(orderList);
-        System.out.println(order.getCurrentState());
+        order.printCurrentState();
     }
 
     @Test

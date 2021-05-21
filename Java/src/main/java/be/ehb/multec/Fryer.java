@@ -7,7 +7,7 @@ public class Fryer {
 
     public void fry(Order order) throws InterruptedException {
         order.setCurrentState(new CookingState());
-        System.out.println(order.getCurrentState());
+        order.printCurrentState();
         Thread.sleep((long) order.getTime()*1000);
     }
 

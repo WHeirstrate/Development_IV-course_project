@@ -45,11 +45,11 @@ public class Order {
 
     public void startOrder() {
         setCurrentState(new WaitForCookingState());
-        System.out.println(getCurrentState());
+        printCurrentState();
         printOrder();
         sentToFryer();
         setCurrentState(new DoneState());
-        System.out.println(getCurrentState());
+        printCurrentState();
     }
 
     public void printOrder() {
@@ -73,8 +73,8 @@ public class Order {
         return time;
     }
 
-    public State getCurrentState() {
-        return currentState;
+    public void printCurrentState() {
+        System.out.println(currentState);
     }
 
     @Override
