@@ -36,14 +36,12 @@ const sauces = {
   }
 };
 
-
 function getOrderNames(fries) {
   return function (sauce) {
     let newSauces = sauce.map(x => x.name);
     return [fries.name, ...newSauces]
   }
 }
-
 
 function getDescription(p) {
   return p.map((x, i) => {
@@ -61,5 +59,5 @@ function allSauces(...sauces) {
   return sauces
 }
 
-
+// console.log is geen pure functie
 console.log(getDescription(getOrderNames(sizes.small)(allSauces(sauces.mayo, sauces.ketchup))).join(' '));
