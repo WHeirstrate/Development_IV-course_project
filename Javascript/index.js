@@ -47,8 +47,10 @@ function getOrderNames(fries) {
 
 function getDescription(p) {
   return p.map((x, i) => {
-    if (i == 0)
+    if (i == 0 && p.length != 1)
       return x + " fries with";
+    else if (p.length == 1)
+      return x + " fries"
     else if (i + 1 != p.length)
       return x + " and";
     return x
@@ -59,4 +61,5 @@ function allSauces(...sauces) {
   return sauces
 }
 
-console.log(...getDescription(getOrderNames(sizes.small)(allSauces(sauces.mayo, sauces.ketchup))));
+
+console.log(getDescription(getOrderNames(sizes.small)(allSauces(sauces.mayo, sauces.ketchup))).join(' '));
