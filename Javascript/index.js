@@ -15,7 +15,6 @@ const sizes = {
       name: "family",
       cost: 5.10,
       time: 3,
-      description: "Family fries"
   }
 };
 
@@ -24,19 +23,16 @@ const sauces = {
       name: "mayonnaise",
       cost: 0.70,
       time: 1,
-      description: " with mayonaise"
   },
   ketchup: {
       name: "ketchup",
       cost: 0.70,
       time: 1,
-      description: " with ketchup"
   },
   special: {
       name: "special",
       cost: 1.50,
       time: 2,
-      description: " with special sauce"
   }
 };
 
@@ -48,8 +44,19 @@ function getOrderNames(fries){
   }
 }
 
-/* function getName(p){
-  return p.name
-} */
 
-console.log(...getOrderNames(sizes.small)([sauces.mayo, sauces.ketchup]));
+function getDescription(p){
+  return p.map((x,i) => {
+    if(i == 0)
+      return x + " fries with";
+   else  if(i+1 != p.length)
+    return x + " and";
+    return x
+  })
+}
+
+function allSauces(...sauces){
+  return sauces
+}
+
+console.log(...getDescription(getOrderNames(sizes.small)(allSauces(sauces.mayo, sauces.ketchup))));
