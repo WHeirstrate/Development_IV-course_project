@@ -61,5 +61,5 @@ function allSauces(...sauces) {
   return sauces
 }
 
-// Console.log is een niet pure functie
+
 console.log(getDescription(getOrderNames(sizes.small)(allSauces(sauces.mayo, sauces.ketchup))).join(' '));
