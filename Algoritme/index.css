@@ -62,3 +62,7 @@ form {
     background-color: rgb(231, 231, 231);
     text-align: center;
 }
+
+.bottom p {
+    margin-top: 15px;
+}
