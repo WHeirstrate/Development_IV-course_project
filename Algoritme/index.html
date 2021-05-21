@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development4 - Algoritme</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="body">
+    <header class="header">
+        <h1 class="header_title">Algoritme</h1>
+    </header>
+
+    <main class="main">
+        <div class="top part">
+            <form id="inputForm">
+                <br>
+                <label for="numberInput"> Vul hier je nummers in
+                    <input id="numberInput" type="number" required>
+                </label> <br>
+                <input type="submit" value="Voeg het nummer toe!">
+            </form>
+            <br>
+            <p id="displayNumbers">Hier komt je lijst van cijfers...</p>
+            <br>
+            <button onclick="window.location.reload()">Maak de aray leeg</button>
+        </div>
+        <div class="middle part"></div>
+        <div class="bottom part">
+            <button class="bottom_button" id="sortAndFind">Sorteer en vindt het eerste ontbrekende nummer in de
+                reeks</button>
+            <p>Het eerstvolgende nummer dat ontbreekt uit de lijst is: <span id="missingNr"></span></p>
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="./index.js"></script>
