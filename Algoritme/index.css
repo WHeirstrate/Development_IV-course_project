@@ -11,10 +11,6 @@ button {
     margin-top: 15px;
 }
 
-form {
-    margin-top: 15px;
-}
-
 .body {
     overflow: hidden;
 }
@@ -47,6 +43,10 @@ form {
 .top {
     background-color: rgb(231, 231, 231);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #displayNumbers {
@@ -56,11 +56,19 @@ form {
 .middle {
     background-color: rgb(255, 255, 255);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
 
 .bottom {
     background-color: rgb(231, 231, 231);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .bottom p {
