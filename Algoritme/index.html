@@ -25,14 +25,19 @@
             </form>
             <br>
             <p id="displayNumbers">Hier komt je lijst van cijfers...</p>
-            <br>
             <button onclick="window.location.reload()">Maak de aray leeg</button>
         </div>
-        <div class="middle part"></div>
+        <div class="middle part">
+            <button style="margin-bottom: 15px" id="scramble">Gooi de lijst door elkaar</button>
+            <p>De lijst wordt eerst doorheengeschud om de kracht van het algoritme te bewijzen:</p>
+            <br>
+            <p id="scrambledArray" style="color: gray">...</p>
+        </div>
         <div class="bottom part">
             <button class="bottom_button" id="sortAndFind">Sorteer en vindt het eerste ontbrekende nummer in de
                 reeks</button>
-            <p>Het eerstvolgende nummer dat ontbreekt uit de lijst is: <span id="missingNr"></span></p>
+            <p>Het eerstvolgende nummer dat ontbreekt uit de lijst is</p>
+            <p id="missingNr" style="color: gray">...</p>
         </div>
     </main>
 </body>
